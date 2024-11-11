@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Link to external CSS file (you can change this or add inline styles) -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#blog">Daily Blogs</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to My Portfolio</h1>
+        <p>This is the home section where you introduce your website and yourself briefly.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>My Services</h2>
+        <ul>
+            <li>Web Development</li>
+            <li>App Development</li>
+            <li>Full Stack Development</li>
+            <li>Tech Consultation</li>
+        </ul>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a full stack developer with 7+ years of experience, offering cutting-edge solutions for web and app development.</p>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2>Daily Tech Blogs</h2>
+        <div id="blog-posts">
+            <!-- Blog posts will be inserted here dynamically using JavaScript -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- JavaScript for Dynamic Blog Posts -->
+    <script>
+        // Sample blog data (you can fetch real-time blog posts from an API later)
+        const blogPosts = [
+            {
+                title: 'Latest Trends in Web Development',
+                content: 'Explore the latest trends in web technologies, frameworks, and tools...'
+            },
+            {
+                title: 'Understanding JavaScript ES6+ Features',
+                content: 'A deep dive into the most powerful features introduced in ES6+...'
+            },
+            {
+                title: 'How to Optimize Your Website for Performance',
+                content: 'Learn optimization techniques to speed up your website and improve UX...'
+            }
+        ];
+
+        const blogSection = document.getElementById('blog-posts');
+
+        // Loop through each blog post and add it to the blog section
+        blogPosts.forEach(post => {
+            const postDiv = document.createElement('div');
+            postDiv.classList.add('blog-post');
+
+            const postTitle = document.createElement('h3');
+            postTitle.textContent = post.title;
+
+            const postContent = document.createElement('p');
+            postContent.textContent = post.content;
+
+            postDiv.appendChild(postTitle);
+            postDiv.appendChild(postContent);
+
+            blogSection.appendChild(postDiv);
+        });
+    </script>
+</body>
+</html>
